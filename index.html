@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+            integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer" />
+        <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+            crossorigin="anonymous">
+        <title>Kanban-Board</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+
+    <body>
+        <!-- <nav id="navbar">
+            <ul class="navbar-items flexbox-col">
+                <li class="navbar-logo flexbox-left">
+                    <a class="navbar-item-inner flexbox">
+                        <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1"
+                            data-name="Layer 1" viewBox="0 0 1438.88 1819.54">
+                            <polygon
+                                points="925.79 318.48 830.56 0 183.51 1384.12 510.41 1178.46 925.79 318.48" />
+                            <polygon
+                                points="1438.88 1663.28 1126.35 948.08 111.98 1586.26 0 1819.54 1020.91 1250.57 1123.78 1471.02 783.64 1663.28 1438.88 1663.28" />
+                        </svg>
+                    </a>
+                </li>
+                <li class="navbar-item flexbox-left">
+                    <a class="navbar-item-inner flexbox-left">
+                        <div class="navbar-item-inner-icon-wrapper flexbox">
+                            <ion-icon name="search-outline"></ion-icon>
+                        </div>
+                        <span class="link-text">Search</span>
+                    </a>
+                </li>
+                <li class="navbar-item flexbox-left">
+                    <a class="navbar-item-inner flexbox-left">
+                        <div class="navbar-item-inner-icon-wrapper flexbox">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </div>
+                        <span class="link-text">Workspace views</span>
+
+                    </a>
+                </li>
+                <li class="navbar-item flexbox-left">
+                    <a class="navbar-item-inner flexbox-left">
+                        <div class="navbar-item-inner-icon-wrapper flexbox">
+                            <ion-icon name="folder-open-outline"></ion-icon>
+                        </div>
+                        <span class="link-text">Members</span>
+                    </a>
+                </li>
+                <li class="navbar-item flexbox-left">
+                    <a class="navbar-item-inner flexbox-left">
+                        <div class="navbar-item-inner-icon-wrapper flexbox">
+                            <ion-icon name="pie-chart-outline"></ion-icon>
+                        </div>
+                        <span class="link-text">Setting</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+
+        <main id="main" class="flexbox-col">
+            <div class="topnav">
+                <a href="#home">Kanban board</a>
+                <div class="search-container">
+                    <form action="/action_page.php">
+                        <input type="text" placeholder="Search.." name="search">
+                        <span class="profile-icon">
+                            <i class="fa-solid fa-user"></i>
+                        </span>
+
+                    </form>
+                </div>
+            </div>
+        </main> -->
+
+        <div class="dashboard">
+            <div class="dashboard-nav">
+                <header>
+                    <a href="#!" class="menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </a><a href="#" class="brand-logo">
+                        <i class="fa-brands fa-square-pied-piper"></i>
+                        <span>BRAND</span>
+                    </a>
+                </header>
+
+                <nav class="dashboard-nav-list">
+                    <a href="#" class="dashboard-nav-item">
+                        <i class="fas fa-home"></i>
+                        Home
+                    </a>
+
+                    <div class="dashboard-nav-dropdown">
+                        <a href="#!"
+                            class="dashboard-nav-item dashboard-nav-dropdown-toggle">
+                            <i class="fas fa-photo-video"></i>
+                            Workspace views
+                        </a>
+                        <div class="dashboard-nav-dropdown-menu">
+                            <a href="#" class="dashboard-nav-dropdown-item">Board</a>
+                            <a href="#" class="dashboard-nav-dropdown-item">Calendar</a>
+                            <a href="#" class="dashboard-nav-dropdown-item">Timeline</a>
+                        </div>
+                    </div>
+
+                    <a href="#" class="dashboard-nav-item"><i
+                            class="fas fa-cogs"></i>
+                        Settings
+                    </a>
+                    <a href="#" class="dashboard-nav-item">
+                        <i class="fas fa-user"></i>
+                        Members
+                    </a>
+                    <div class="nav-item-divider"></div>
+                    <a href="#" class="dashboard-nav-item">
+                        <i class="fas fa-sign-out-alt"></i>
+                        profile
+                    </a>
+                    <a href="#" class="dashboard-nav-item">
+                        <i class="fas fa-sign-out-alt"></i>
+                        Logout
+                    </a>
+                </nav>
+            </div>
+
+            <div class="dashboard-app">
+                <header class="dashboard-toolbar">
+                    <a href="#!" class="menu-toggle">
+                        <i class="fas fa-bars"></i>
+
+                    </a>
+                    <div class="search-container">
+                        <form action>
+                            <input type="text" placeholder="Search.."
+                                name="search" class="search-bar">
+                            <span class="profile-icon">
+                                <i class="fa-solid fa-user"></i>
+                            </span>
+                        </form>
+                    </div>
+                </header>
+                <header class="dashbard-second-nav">
+
+                    <div class="row secondary-header">
+                        <div class="col-md-2 brand">
+                            <h4>Canban board</h4>
+                        </div>
+
+                        <div class="col-md-2 theme">
+                            <form action>
+                                <select name="cars" id="themes"
+                                    class="dropdown-width">
+                                    <option value="volvo">Theme</option>
+                                    <option value="volvo"><i
+                                            class="fa-solid fa-circle"
+                                            style="color: #FD7AC0;"></i>
+                                        Pink</option>
+                                    <option value="saab">Number2</option>
+                                    <option value="opel">Number3</option>
+                                    <option value="audi">Number4</option>
+                                </select>
+                            </form>
+                        </div>
+                        <div class="col-md-2 box-views">
+                            <form class="theme">
+                                <select name="cars" id="board"
+                                    class="dropdown-width">
+                                    <option value="volvo">Board</option>
+                                    <option value="volvo"><i
+                                            class="fa-solid fa-circle"
+                                            style="color: #FD7AC0;"></i>
+                                        Pink</option>
+                                    <option value="saab">Number2</option>
+                                    <option value="opel">Number3</option>
+                                    <option value="audi">Number4</option>
+                                </select>
+                            </form>
+                        </div>
+                        <div class="col-md-6 second-item">
+                            <i class="fa-sharp fa-regular fa-calendar"></i>
+                            <i class="fa-sharp fa-solid fa-star"></i>
+                            <i class="fa-sharp fa-regular fa-bell"></i>
+                            <i class="fa-regular fa-circle-question"></i>
+                        </div>
+                        <!-- <div class="col-md-2 dashboard-menu">
+                                <div class="dropdown">
+                                    <button onclick="myFunction()"
+                                        class="dropbtn">Theme</button>
+                                    <div id="myDropdown"
+                                        class="dropdown-content">
+                                        <a href="#home">
+                                            <i class="fa-solid fa-circle"
+                                                style="color: #FD7AC0;"></i>
+                                            Pink</a>
+                                        <a href="#about"><i
+                                                class="fa-solid fa-circle"
+                                                style="color: #0074B7;"></i>
+                                            Bluet</a>
+                                        <a href="#contact"><i
+                                                class="fa-solid fa-circle"
+                                                style="color: #AA1945;"></i>
+                                            Red</a>
+                                        <a href="#contact"><i
+                                                class="fa-solid fa-circle"
+                                                style="color: #18A558;"></i>
+                                            Green</a>
+                                        <a href="#contact"><i
+                                                class="fa-solid fa-circle"
+                                                style="color: #05043E;"></i>
+                                            Navy</a>
+                                        <a href="#contact"><i
+                                                class="fa-solid fa-circle"
+                                                style="color: #7954A1;"></i>
+                                            Violet</a>
+                                        <a href="#contact"><i
+                                                class="fa-solid fa-circle"
+                                                style="color: #FAD02C;"></i>
+                                            Yellow</a>
+                                        <a href="#contact"><i
+                                                class="fa-solid fa-circle"
+                                                style="color: #C0C0C0;"></i>
+                                            Gray</a>
+                                        <a href="#contact"><i
+                                                class="fa-solid fa-circle"
+                                                style="color: #FD7F20;"></i>
+                                            Orange</a>
+                                        <a href="#contact"><i
+                                                class="fa-solid fa-circle"
+                                                style="color: #37BEB0;"></i>
+                                            Blue green</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2 dashboard-menu">
+                                <div class="dropdown">
+                                    <button onclick="myFunction()"
+                                        class="dropbtn">Theme</button>
+                                    <div id="myDropdown"
+                                        class="dropdown-content">
+                                        <a href="#home">
+                                            <i class="fa-solid fa-circle"
+                                                style="color: #FD7AC0;"></i>
+                                            Pink</a>
+                                        <a href="#about"><i
+                                                class="fa-solid fa-circle"
+                                                style="color: #0074B7;"></i>
+                                            Bluet</a>
+                                        <a href="#contact"><i
+                                                class="fa-solid fa-circle"
+                                                style="color: #AA1945;"></i>
+                                            Red</a>
+                                        <a href="#contact"><i
+                                                class="fa-solid fa-circle"
+                                                style="color: #18A558;"></i>
+                                            Green</a>
+                                        <a href="#contact"><i
+                                                class="fa-solid fa-circle"
+                                                style="color: #05043E;"></i>
+                                            Navy</a>
+                                        <a href="#contact"><i
+                                                class="fa-solid fa-circle"
+                                                style="color: #7954A1;"></i>
+                                            Violet</a>
+                                        <a href="#contact"><i
+                                                class="fa-solid fa-circle"
+                                                style="color: #FAD02C;"></i>
+                                            Yellow</a>
+                                        <a href="#contact"><i
+                                                class="fa-solid fa-circle"
+                                                style="color: #C0C0C0;"></i>
+                                            Gray</a>
+                                        <a href="#contact"><i
+                                                class="fa-solid fa-circle"
+                                                style="color: #FD7F20;"></i>
+                                            Orange</a>
+                                        <a href="#contact"><i
+                                                class="fa-solid fa-circle"
+                                                style="color: #37BEB0;"></i>
+                                            Blue green</a>
+                                    </div>
+                                </div>
+                            </div> -->
+                    </div>
+
+                </header>
+
+                <div class="dashboard-menu">
+                    <section class="add-task-container">
+                        <h5>project name </h5>
+                        <form class="add-task-form">
+
+                            <input type="text" id="taskText"
+                                placeholder="New Task...">
+                            <button type="submit" class="button add-button">ADD</button>
+                        </form>
+
+                    </section>
+                    <!-- <div class="card-wrapper">
+                        <div class="row">
+                            <div class="col-md card">
+                                <h6 class="card-title">
+                                    TO-DO
+                                </h6>
+                            </div>
+                            <div class="col-md card">
+                                <h6 class="card-title">
+                                    In progress
+                                </h6>
+                            </div>
+                            <div class="col-md card">
+                                <h6 class="card-title">
+                                    On hold
+                                </h6>
+                                <p></p>
+                            </div>
+                            <div class="col-md card">
+                                <h6 class="card-title">
+                                    Finished
+                                </h6>
+                            </div>
+                            <div class="col-md card">
+                                <h6 class="card-title">
+                                    Archeive
+                                </h6>
+                            </div>
+                        </div>
+                    </div> -->
+                    <main class="card-wrapper">
+                        <ul class="row">
+
+                            <li class="col-md to-do-column">
+                                <div class="column-header">
+                                    <h4>To Do</h4>
+                                </div>
+                                <ul class="task-list" id="to-do">
+                                    <li class="task">
+                                        Analysis
+                                    </li>
+                                    <li class="task">
+                                        Coding
+                                    </li>
+                                    <li class="task">
+                                        Card Sorting
+                                    </li>
+                                    <li class="task">
+                                        Measure
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="col-md doing-column">
+                                <div class="column-header">
+                                    <h4>In progress</h4>
+                                </div>
+                                <ul class="task-list" id="doing">
+                                    <li class="task">
+                                        Hypothesis
+                                    </li>
+                                    <li class="task">
+                                        User Testing
+                                    </li>
+                                    <li class="task">
+                                        Prototype
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="col-md onhold-column">
+                                <div class="column-header">
+                                    <h4>On hold</h4>
+                                </div>
+                                <ul class="task-list" id="ohHold">
+                                    <li class="task">
+                                        Ideation
+                                    </li>
+                                    <li class="task">
+                                        Sketches
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="col-md done-column">
+                                <div class="column-header">
+                                    <h4>Complete</h4>
+                                </div>
+                                <ul class="task-list" id="done">
+                                    <li class="task">
+                                        Interviews
+                                    </li>
+                                    <li class="task">
+                                        Research
+                                    </li>
+
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </main>
+                </div>
+
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
