@@ -1,3 +1,4 @@
+// Drop down sidebar menu
 const mobileScreen = window.matchMedia("(max-width: 990px )");
 document.addEventListener("DOMContentLoaded", function () {
   const dropdownToggle = document.querySelectorAll(
@@ -48,7 +49,7 @@ window.onclick = function (event) {
   }
 };
 
-// drag and drop
+// drag and drop tasks
 let addForm = document.querySelector(".add-task-form");
 let taskText = document.querySelector("#taskText");
 let addButton = document.querySelector(".add-button");
@@ -87,4 +88,67 @@ for (let taskList of taskLists) {
   taskList.ondrop = function () {
     taskList.append(currentDrag);
   };
+}
+
+// changing theme color
+const colors = ["aquamarine", "pink", "blueviolet", "blue", "green", "gray"];
+let defaultColor = "";
+
+colors.forEach((color) => {
+  document.getElementById(color).addEventListener("click", changeColor);
+});
+
+function changeColor(e) {
+  if (e.target.id === "pink") {
+    document.body.style.setProperty("--primary-color", "#FD7AC0");
+    document.body.style.setProperty("--main-color", "#ffcde8");
+    document.body.style.setProperty("--second-color", "#fffafd");
+    defaultColor = "pink";
+  } else if (e.target.id === "blueviolet") {
+    document.body.style.setProperty("--primary-color", "blueviolet");
+    document.body.style.setProperty("--main-color", "#c78bff");
+    document.body.style.setProperty("--second-color", "#f7efff");
+    defaultColor = "blueviolet";
+  } else if (e.target.id === "blue") {
+    document.body.style.setProperty("--primary-color", "#0637d8");
+    document.body.style.setProperty("--main-color", "#678bff");
+    document.body.style.setProperty("--second-color", "#f5f7ff");
+    defaultColor = "blue";
+  } else if (e.target.id === "green") {
+    document.body.style.setProperty("--primary-color", "#16a864");
+    document.body.style.setProperty("--main-color", "#6be3ab");
+    document.body.style.setProperty("--second-color", "#effff7");
+    defaultColor = "green";
+  } else if (e.target.id === "gray") {
+    document.body.style.setProperty("--primary-color", "#b9b9b9");
+    document.body.style.setProperty("--main-color", "#dbdbdb");
+    document.body.style.setProperty("--second-color", "#eeeeee");
+    defaultColor = "gray";
+  } else if (e.target.id === "aquamarine") {
+    document.body.style.setProperty("--primary-color", "#37BEB0");
+    document.body.style.setProperty("--main-color", "#a4e5e0");
+    document.body.style.setProperty("--second-color", "#f4fffd");
+    defaultColor = "aquamarine";
+  }
+}
+
+// changing view
+const views = ["list", "board", "board2", "list2"];
+views.forEach((view) => {
+  document.getElementById(view).addEventListener("click", changeView);
+});
+function changeView(e) {
+  if (e.target.id === "list" || e.target.id === "list2") {
+    document.querySelector(".style-1").classList.add("view-style");
+    document.querySelector(".style-2").classList.remove("view-style");
+    document.querySelectorAll(".task").forEach((task) => {
+      task.style.height = "3rem";
+    });
+  } else if (e.target.id === "board" || e.target.id === "board2") {
+    document.querySelector(".style-1").classList.remove("view-style");
+    document.querySelector(".style-2").classList.add("view-style");
+    document.querySelectorAll(".task").forEach((task) => {
+      task.style.height = "5rem";
+    });
+  }
 }
