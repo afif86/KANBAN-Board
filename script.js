@@ -152,3 +152,20 @@ function changeView(e) {
     });
   }
 }
+
+document.querySelectorAll(".priority-btn li").forEach((item) => {
+  item.addEventListener("click", addPriority);
+});
+
+function addPriority(e) {
+  if (e.target.dataset.id === "urgent") {
+    document.querySelector(".flag-color").classList.remove("text-secondary");
+    document.querySelector(".flag-color").classList.add("text-danger");
+  } else if (e.target.dataset.id === "high") {
+    document.querySelector(".flag-color").classList.remove("text-secondary");
+    document.querySelector(".flag-color").classList.add("text-warning");
+  } else if (e.target.dataset.id === "normal") {
+    document.querySelector(".flag-color").classList.remove("text-secondary");
+    document.querySelector(".flag-color").classList.add("text-primary");
+  }
+}
