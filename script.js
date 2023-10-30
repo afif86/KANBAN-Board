@@ -1,9 +1,7 @@
 // Drop down sidebar menu
 const mobileScreen = window.matchMedia("(max-width: 990px )");
 document.addEventListener("DOMContentLoaded", function () {
-  const dropdownToggle = document.querySelectorAll(
-    ".dashboard-nav-dropdown-toggle"
-  );
+  const dropdownToggle = document.querySelectorAll(".dashboard-nav-dropdown-toggle");
   const menuToggle = document.querySelector(".menu-toggle");
   const dashboardNav = document.querySelector(".dashboard-nav");
   const dashboard = document.querySelector(".dashboard");
@@ -159,13 +157,13 @@ document.querySelectorAll(".priority-btn li").forEach((item) => {
 
 function addPriority(e) {
   if (e.target.dataset.id === "urgent") {
-    document.querySelector(".flag-color").classList.remove("text-secondary");
-    document.querySelector(".flag-color").classList.add("text-danger");
+    e.target.parentNode.previousElementSibling.querySelector("i").style.color = "#dc3545";
+    // e.target.parentNode.previousElementSibling.querySelector("i").classList.add("text-danger");
   } else if (e.target.dataset.id === "high") {
-    document.querySelector(".flag-color").classList.remove("text-secondary");
-    document.querySelector(".flag-color").classList.add("text-warning");
+    e.target.parentNode.previousElementSibling.querySelector("i").style.color = "#ffc107";
   } else if (e.target.dataset.id === "normal") {
-    document.querySelector(".flag-color").classList.remove("text-secondary");
-    document.querySelector(".flag-color").classList.add("text-primary");
+    e.target.parentNode.previousElementSibling.querySelector("i").style.color = "#0d6efd";
+  } else if (e.target.dataset.id === "low") {
+    e.target.parentNode.previousElementSibling.querySelector("i").style.color = "#6c757d";
   }
 }
